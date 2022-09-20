@@ -227,7 +227,6 @@ end
 		mouse_box.Visible = state
         SilentAimSettings.ShowSilentAimTarget = state
 	end}
-	SilentAim:AddBox({text = "Player Username", flag = "SilentAimUsername"})
 resume(create(function()
     RenderStepped:Connect(function()
         if SilentAimSettings.ShowSilentAimTarget == true and SilentAimSettings.Enabled == true then
