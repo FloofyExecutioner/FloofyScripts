@@ -277,7 +277,7 @@ UserInputService.InputEnded:Connect(function(inp)
 end)
 RunService.RenderStepped:Connect(function()
     if SilentAimSettings.Enabled == true and MB2Down == true and Target ~= nil then
-        Aimbot()
+        Aimbot(Target)
     end
 end)
 
