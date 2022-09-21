@@ -201,8 +201,8 @@ local function getClosestPlayer()
     end
     return Closest
 end
-local function Aimbot(Target)
-   workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position,Target)
+local function Aimbot(T)
+   workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position,T)
 end
     --"Visible", {Text = "Show FOV Circle"}):AddColorPicker("Color", {Default = Color3.fromRGB(54, 57, 241)}):OnChanged(function()
         --fov_circle.Visible = Toggles.Visible.Value
