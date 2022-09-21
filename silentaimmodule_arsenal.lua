@@ -216,7 +216,7 @@ end
 		fov_circle.Visible = state
 		SilentAimSettings.FOVVisible = state
 	end}
-	SilentAim:AddSlider{text = "FOV Circle Radius", flag = "SilentAimFOVRadius", min = 1, max = 360, value = 100, callback = function(value)
+	SilentAim:AddSlider{text = "FOV Circle Radius", flag = "SilentAimFOVRadius", min = 1, max = 1000, value = 100, callback = function(value)
 		fov_circle.Radius = value
 		SilentAimSettings.FOVRadius = value
 	end}
