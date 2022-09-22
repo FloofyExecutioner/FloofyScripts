@@ -219,7 +219,7 @@ end
 	SilentAim:AddToggle{text = "Team Check", flag = "AimbotTeamCheck", callback = function(state) 
 		SilentAimSettings.TeamCheck = state
 	end}
-	SilentAim:AddList({text = "Target Part", flag = "AimbotTargetPart", value = "Head", values = {"Head","HumanoidRootPart","Random"}, callback = function(value) 
+	SilentAim:AddList({text = "Target Part", flag = "AimbotTargetPart", value = "Head", values = {"Head","HumanoidRootPart"}, callback = function(value) 
 		SilentAimSettings.TargetPart = value
 	end})
 	SilentAim:AddToggle{text = "Show FOV Circle", flag = "AimbotShowFOVCircle", callback = function(state)
@@ -239,17 +239,18 @@ end
 	end}
 resume(create(function()
     RenderStepped:Connect(function()
-        if SilentAimSettings.ShowSilentAimTarget == true and SilentAimSettings.Enabled == true then
+        if SilentAimSettings.Enabled == true then
             if getClosestPlayer() then
                 local Root = getClosestPlayer().Parent.PrimaryPart or getClosestPlayer()
                 local RootToViewportPoint, IsOnScreen = WorldToViewportPoint(Camera, Root.Position);
                 -- using PrimaryPart instead because if your Target Part is "Random" it will flicker the square between the Target's Head and HumanoidRootPart (its annoying)
-                
-                mouse_box.Visible = IsOnScreen
-                mouse_box.Position = Vector2.new(RootToViewportPoint.X, RootToViewportPoint.Y)
-                if getgenv().library then
-            	      mouse_box.Color = getgenv().library.options["Menu Accent Color"].color
-	              end
+                if SilentAimSettings.ShowSilentAimTarget == true then
+		 	mouse_box.Visible = IsOnScreen
+                	mouse_box.Position = Vector2.new(RootToViewportPoint.X, RootToViewportPoint.Y)
+                	if getgenv().library then
+            	      		mouse_box.Color = getgenv().library.options["Menu Accent Color"].color
+	            	end					
+		end
             else 
                 mouse_box.Visible = false 
                 mouse_box.Position = Vector2.new()
