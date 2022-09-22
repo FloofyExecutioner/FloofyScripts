@@ -1,5 +1,5 @@
 --[[
-    RIPPED FROM: https://github.com/Averiias/Universal-SilentAim
+   FOV CIRCLE SYSTEM/TARGETING SYSTEM RIPPED FROM: https://github.com/Averiias/Universal-SilentAim
 --]]
 local SilentAimSettings = {
     Enabled = false,
@@ -213,27 +213,27 @@ end
     --"Show Silent Aim Target"
         --mouse_box.Visible = Toggles.MousePosition.Value 
         --SilentAimSettings.ShowSilentAimTarget = Toggles.MousePosition.Value
-	SilentAim:AddToggle{text = "Enabled", flag = "SilentAimEnabled", callback = function(state) 
+	SilentAim:AddToggle{text = "Enabled", flag = "AimbotEnabled", callback = function(state) 
 		SilentAimSettings.Enabled = state
 	end}
-	SilentAim:AddToggle{text = "Team Check", flag = "SilentAimTeamCheck", callback = function(state) 
+	SilentAim:AddToggle{text = "Team Check", flag = "AimbotTeamCheck", callback = function(state) 
 		SilentAimSettings.TeamCheck = state
 	end}
-	SilentAim:AddList({text = "Target Part", flag = "SilentAimTargetPart", value = "Head", values = {"Head","HumanoidRootPart","Random"}, callback = function(value) 
+	SilentAim:AddList({text = "Target Part", flag = "AimbotTargetPart", value = "Head", values = {"Head","HumanoidRootPart","Random"}, callback = function(value) 
 		SilentAimSettings.TargetPart = value
 	end})
-	SilentAim:AddToggle{text = "Show FOV Circle", flag = "SilentAimShowFOVCircle", callback = function(state)
+	SilentAim:AddToggle{text = "Show FOV Circle", flag = "AimbotShowFOVCircle", callback = function(state)
 		fov_circle.Visible = state
 		SilentAimSettings.FOVVisible = state
 	end}
-	SilentAim:AddSlider{text = "FOV Circle Radius", flag = "SilentAimFOVRadius", min = 1, max = 1000, value = 100, callback = function(value)
+	SilentAim:AddSlider{text = "FOV Circle Radius", flag = "AimbotFOVRadius", min = 1, max = 1000, value = 100, callback = function(value)
 		fov_circle.Radius = value
 		SilentAimSettings.FOVRadius = value
 	end}
-	SilentAim:AddSlider{text = "FOV Circle Sides", flag = "SilentAimFOVSides", min = 1, max = 48, value = 8, callback = function(value)
+	SilentAim:AddSlider{text = "FOV Circle Sides", flag = "AimbotFOVSides", min = 1, max = 48, value = 8, callback = function(value)
 		fov_circle.NumSides = value
 	end}
-	SilentAim:AddToggle{text = "Show Silent Aim Target", flag = "SilentAimShowTarget", callback = function(state)
+	SilentAim:AddToggle{text = "Show Aimbot Aim Target", flag = "AimbotShowTarget", callback = function(state)
 		mouse_box.Visible = state
         SilentAimSettings.ShowSilentAimTarget = state
 	end}
