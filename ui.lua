@@ -1,3 +1,11 @@
+local function execname()
+	if identifyexecutor then
+		local e = identifyexecutor()
+		return e
+	else
+		return "Unknown"
+	end
+end
 --LIBRARY START
 	--Services
 	getgenv().runService = game:GetService"RunService"
@@ -9,7 +17,7 @@
 		getgenv().library:Unload()
 	end
 
-	local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "shitware", open = false, mousestate = inputService.MouseIconEnabled, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "floofyscripts_arsenal", fileext = ".uw"}
+	local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "arsenal | "..execname(), open = false, mousestate = inputService.MouseIconEnabled, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "floofyscripts_arsenal", fileext = ".uw"}
 	getgenv().library = library
 
 	--Locals
@@ -2579,7 +2587,14 @@
 			SliceCenter = Rect.new(2, 2, 62, 62),
 			Parent = self.main
 		})
-
+		self:Create("UIGradient", {
+			Color = ColorSequence.new({
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(115, 115, 115)),
+				ColorSequenceKeypoint.new(1, Color3.new(1, 1, 1)),
+			}),
+			Rotation = -90,
+			Parent = self.top
+		})
 		self.top.InputBegan:connect(function(input)
 			if input.UserInputType.Name == "MouseButton1" then
 				dragObject = self.main
