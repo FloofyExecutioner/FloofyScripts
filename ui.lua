@@ -2717,11 +2717,10 @@ end
 			delay(1, function() self:Close() end)
 		end
 	end
-	library.CreditsSection = library.SettingsColumn:AddSection"Credits"
 	library.SettingsTab = library:AddTab("Settings", 100)
 	library.SettingsColumn = library.SettingsTab:AddColumn()
 	library.SettingsColumn1 = library.SettingsTab:AddColumn()
-
+	
 	library.SettingsMain = library.SettingsColumn:AddSection"Main"
 	library.SettingsMain:AddButton({text = "Unload Cheat", nomouse = true, callback = function()
 		library:Unload()
@@ -2800,4 +2799,5 @@ end
 			end
 		end
 	end})
+	library.CreditsSection = library.SettingsColumn:AddSection"Credits"
 	--LIBRARY END
