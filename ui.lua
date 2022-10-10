@@ -2729,7 +2729,7 @@ end
 	library.SettingsMain:AddBind({text = "Panic Key", callback = library.options["Unload Cheat"].callback})
 
 	library.SettingsMenu = library.SettingsColumn:AddSection"Menu"
-	library.SettingsMenu:AddBind({text = "Open / Close", flag = "UI Toggle", nomouse = true, key = "Insert", callback = function() library:Close() end})
+	library.SettingsMenu:AddBind({text = "Open / Close", flag = "UI Toggle", nomouse = true, key = "RightShift", callback = function() library:Close() end})
 	library.SettingsMenu:AddColor({text = "Accent Color", flag = "Menu Accent Color", color = Color3.fromRGB(255, 65, 65), callback = function(Color)
 		if library.currentTab then
 			library.currentTab.button.TextColor3 = Color
